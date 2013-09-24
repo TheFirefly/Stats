@@ -1,7 +1,7 @@
 public class Stats {
 	
 	public static void main(String[] args) {
-		int[] a = {7, 5, 3, 3, 1};
+		int[] a = {1, 2, 3, 4, 5};
 		int[] b = {1, 3, 2, 5, 6, 7};
 
 		System.out.println("Max of a: " + max(a));
@@ -19,8 +19,8 @@ public class Stats {
 		System.out.println("Standard deviation of a: " + standardDeviation(a));
 		System.out.println("Standard deviation of b: " + standardDeviation(b));
 
-		System.out.println("Fibonacci sequence of length 20: ");
-		printArray(fibonacci(20));
+		// System.out.println("Fibonacci sequence of length 20: ");
+		// printArray(fibonacci(20));
 	}
 
 	public static void printArray(int[] a) {
@@ -105,11 +105,15 @@ public class Stats {
 	}
 
 	public static double quartile1(int[] a) {
-		return median(a, 0, (a.length / 4) + 1);
+		return median(a, 0, (a.length / 4));
 	}
 
 	public static double quartile3(int[] a) {
-		return median(a, (a.length / 2), (a.length));
+		if (a.length % 2 == 0) {
+			return median(a, (a.length / 2), (a.length - 1));
+		} else {
+			return median(a, (a.length / 2), (a.length));
+		}
 	}
 
 	public static int mode(int[] a) {
