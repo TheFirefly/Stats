@@ -23,13 +23,13 @@ public class Stats {
 		printArray(fibonacci(20));
 	}
 
-	private static void printArray(int[] a) {
+	public static void printArray(int[] a) {
 		for (int i = 0 ; i < a.length ; i++) {
 			System.out.print(a[i] + " ");
 		}
 	}
 
-	private static int max(int[] a) {
+	public static int max(int[] a) {
 		int last = a[0];
 
 		for (int i = 0 ; i < a.length ; i++) {
@@ -39,7 +39,7 @@ public class Stats {
 		return last;
 	}
 
-	private static int min(int[] a) {
+	public static int min(int[] a) {
 		int last = a[0];
 
 		for (int i = 0 ; i < a.length ; i++) {
@@ -49,7 +49,7 @@ public class Stats {
 		return last;
 	}
 
-	private static double sum(int[] a) {
+	public static double sum(int[] a) {
 		double sum = 0;
 
 		for (int i = 0 ; i < a.length ; i++) {
@@ -59,7 +59,7 @@ public class Stats {
 		return sum;
 	}
 
-	private static double mean(int[] a) {
+	public static double mean(int[] a) {
 		return sum(a) / a.length;
 	}
 
@@ -76,7 +76,7 @@ public class Stats {
 		return index;
 	}
 
-	private static int[] sortA(int[] a) {
+	public static int[] sortA(int[] a) {
 		int start = 0;
 		for (int i = start ; i < a.length ; i++) {
 			int index = getSmallest(a, start);
@@ -89,11 +89,11 @@ public class Stats {
 		return a;
 	}
 
-	private static double median(int[] a) {
+	public static double median(int[] a) {
 		return median(a, 0 , a.length - 1);
 	}
 
-	private static double median(int[] a, int startIndex, int endIndex) {
+	public static double median(int[] a, int startIndex, int endIndex) {
 		a = sortA(a);
 		int length = (endIndex - startIndex) + 1;
 		if (length % 2 == 0) {
@@ -104,15 +104,15 @@ public class Stats {
 		}
 	}
 
-	private static double quartile1(int[] a) {
+	public static double quartile1(int[] a) {
 		return median(a, 0, (a.length / 4) + 1);
 	}
 
-	private static double quartile3(int[] a) {
+	public static double quartile3(int[] a) {
 		return median(a, (a.length / 2), (a.length));
 	}
 
-	private static int mode(int[] a) {
+	public static int mode(int[] a) {
 		int max = a[0];
 		int lastCount = 0;
 
@@ -132,7 +132,7 @@ public class Stats {
 		return max;
 	}
 
-	private static double standardDeviation(int[] a) {
+	public static double standardDeviation(int[] a) {
 		double sum = 0;
 		double mean = mean(a);
 
@@ -145,7 +145,7 @@ public class Stats {
 		return Math.sqrt(sum);
 	}
 
-	private static int[] fibonacci(int length) {
+	public static int[] fibonacci(int length) {
 		int[] a = new int[length];
 		int last = 0;
 		int secondLast = 1;
