@@ -2,11 +2,12 @@ public class Stats {
 	
 	public static void main(String[] args) {
 		int[] a = {7, 5, 3, 3, 1};
-		int[] b = {1, 3, 3, 5, 6, 7};
+		int[] b = {1, 3, 2, 5, 6, 7};
 
 		System.out.println("Max of a: " + max(a));
 		System.out.println("Min of a: " + min(a));
 		System.out.println("Mean of a: " + mean(a));
+		System.out.println("Mean of b: " + mean(b));
 		System.out.println("Median of a: " + median(a));
 		System.out.println("Median of b: " + median(b));
 		System.out.println("Quartile 1 of a: " + quartile1(a));
@@ -14,7 +15,9 @@ public class Stats {
 		System.out.println("Quartile 3 of a: " + quartile3(a));
 		System.out.println("Quartile 3 of b: " + quartile3(b));
 		System.out.println("Mode of a: " + mode(a));
+		System.out.println("Mode of b: " + mode(b));
 		System.out.println("Standard deviation of a: " + standardDeviation(a));
+		System.out.println("Standard deviation of b: " + standardDeviation(b));
 	}
 
 	private static void printArray(int[] a) {
