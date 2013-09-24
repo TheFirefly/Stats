@@ -18,6 +18,9 @@ public class Stats {
 		System.out.println("Mode of b: " + mode(b));
 		System.out.println("Standard deviation of a: " + standardDeviation(a));
 		System.out.println("Standard deviation of b: " + standardDeviation(b));
+
+		System.out.println("Fibonacci sequence of length 20: ");
+		printArray(fibonacci(20));
 	}
 
 	private static void printArray(int[] a) {
@@ -95,7 +98,7 @@ public class Stats {
 		int length = (endIndex - startIndex) + 1;
 		if (length % 2 == 0) {
 			//Even
-			return ((a[startIndex + (length / 2) - 1] + a[startIndex + (length / 2)]) / 2);
+			return ((a[startIndex + (length / 2) - 1] + a[startIndex + (length / 2)]) / 2.0);
 		} else {
 			return a[startIndex + (length / 2)];
 		}
@@ -140,5 +143,20 @@ public class Stats {
 		sum /= a.length - 1;
 
 		return Math.sqrt(sum);
+	}
+
+	private static int[] fibonacci(int length) {
+		int[] a = new int[length];
+		int last = 0;
+		int secondLast = 1;
+		a[0] = 0;
+		a[1] = 1;
+		for (int i = 2 ; i < length ; i++) {
+			a[i] = last + secondLast;
+			last = secondLast;
+			secondLast = a[i];
+		}
+
+		return a;
 	}
 }
