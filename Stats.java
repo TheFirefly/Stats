@@ -1,23 +1,27 @@
 public class Stats {
 	
 	public static void main(String[] args) {
-		int[] a = {1, 2, 3, 4, 5};
-		int[] b = {1, 3, 2, 5, 6, 7};
+		int[] a = {4, 5, -3 ,-2, 1, 0, 5, 8};
+		//-9, -6, -5, 1, 3, 4, 5, 5
+
+		if (a.length == 0) {
+			throw new IllegalArgumentException("Length cannot be 0!");
+		} 
 
 		System.out.println("Max of a: " + max(a));
 		System.out.println("Min of a: " + min(a));
 		System.out.println("Mean of a: " + mean(a));
-		System.out.println("Mean of b: " + mean(b));
+		//System.out.println("Mean of b: " + mean(b));
 		System.out.println("Median of a: " + median(a));
-		System.out.println("Median of b: " + median(b));
+		//System.out.println("Median of b: " + median(b));
 		System.out.println("Quartile 1 of a: " + quartile1(a));
-		System.out.println("Quartile 1 of b: " + quartile1(b));
+		//System.out.println("Quartile 1 of b: " + quartile1(b));
 		System.out.println("Quartile 3 of a: " + quartile3(a));
-		System.out.println("Quartile 3 of b: " + quartile3(b));
+		//System.out.println("Quartile 3 of b: " + quartile3(b));
 		System.out.println("Mode of a: " + mode(a));
-		System.out.println("Mode of b: " + mode(b));
+		//System.out.println("Mode of b: " + mode(b));
 		System.out.println("Standard deviation of a: " + standardDeviation(a));
-		System.out.println("Standard deviation of b: " + standardDeviation(b));
+		//System.out.println("Standard deviation of b: " + standardDeviation(b));
 
 		// System.out.println("Fibonacci sequence of length 20: ");
 		// printArray(fibonacci(20));
@@ -94,6 +98,9 @@ public class Stats {
 	}
 
 	public static double median(int[] a, int startIndex, int endIndex) {
+		if (a.length == 1) {
+			return a[0];
+		}
 		a = sortA(a);
 		int length = (endIndex - startIndex) + 1;
 		if (length % 2 == 0) {
@@ -105,7 +112,7 @@ public class Stats {
 	}
 
 	public static double quartile1(int[] a) {
-		return median(a, 0, (a.length / 4));
+		return median(a, 0, (a.length / 2) - 1);
 	}
 
 	public static double quartile3(int[] a) {
